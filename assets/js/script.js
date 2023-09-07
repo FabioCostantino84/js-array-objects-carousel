@@ -14,3 +14,47 @@ Bonus 2:
 E se volessi un bottone per invertire la "direzione" del carosello?
  */
 
+const slides = [
+    {
+        Image: './assets/img/01.webp'
+    },
+    {
+        Image: './assets/img/02.webp'
+    },
+    {
+        Image: './assets/img/03.webp'
+    },
+    {
+        Image: './assets/img/04.webp'
+    },
+    {
+        Image: './assets/img/05.webp'
+    },
+]
+console.log(slides);
+
+let activeSlide = 0;
+
+// select the dom elements
+const sliderImagesEl = document.querySelector('.slider .images')
+const prevEl = document.querySelector('.prev')
+const nextEl = document.querySelector('.next')
+
+
+//console.log(sliderImagesEl);
+
+/* Print all images into the dom */
+// loop over the slides 
+for (let i = 0; i < slides.length; i++) {
+    const slidePath = slides[i];
+    console.log(slidePath);
+
+    // for each slide we create the markup
+    const slideMarkup = `<img class="${activeSlide === i ? 'active' : ''}" src="${slidePath}" alt="">`
+    //console.log(slideMarkup);
+
+    sliderImagesEl.insertAdjacentHTML('beforeend', slideMarkup)
+
+}
+
+
