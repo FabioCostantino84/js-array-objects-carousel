@@ -43,18 +43,10 @@ const nextEl = document.querySelector('.next')
 
 //console.log(sliderImagesEl);
 
-/* Print all images into the dom */
-// loop over the slides 
-for (let i = 0; i < slides.length; i++) {
-    const slidePath = slides[i];
-    console.log(slidePath);
+  slides.map(getAllImage);
 
-    // for each slide we create the markup
-    const slideMarkup = `<img class="${activeSlide === i ? 'active' : ''}" src="${slidePath}" alt="">`
-    //console.log(slideMarkup);
-
-    sliderImagesEl.insertAdjacentHTML('beforeend', slideMarkup)
-
+  function getAllImage(Image) {
+    return [Image]
 }
-
+console.log(Image);
 
